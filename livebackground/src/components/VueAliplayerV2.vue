@@ -119,7 +119,7 @@
               this.allData=res.data
               this.startTime=new Date(res.data.startTime).getTime()
               this.endTime=new Date(res.data.endTime).getTime()
-              this.serverTime=new Date(res.data.now).getTime()  
+              this.serverTime=new Date(res.data.now).getTime()
               // this.rtmpUrl = res.data.cameraList[0].deviceDto.address;
               this.positionCode= this.$route.query.positionCode||res.data.cameraList[0].deviceDto.positionCode
               this.replace('positionCode',this.positionCode);
@@ -193,11 +193,11 @@
     watch:{
       rtmpUrl(){
         this.replace('rtmpUrl',this.rtmpUrl);
-        
+
       },
       token(){
         this.replace('token',this.token);
-        
+
       },
       first(){
       this.replace('first',this.first);
