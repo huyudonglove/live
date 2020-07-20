@@ -10,7 +10,7 @@
        <div  style="margin-top:20px;width:50%">
         <el-form ref="formSize" :model="formSize" label-width="160px" :rules="rules">
           <el-form-item label="频道名称：" prop="channelName">
-            <el-input v-model="formSize.channelName"  maxlength="28" show-word-limit oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')"></el-input>
+            <el-input v-model.trim="formSize.channelName"  maxlength="28" show-word-limit></el-input>
           </el-form-item>
           <el-form-item label="副标题：" prop="channelViceTopic">
             <el-input v-model="formSize.channelViceTopic" maxlength="28" show-word-limit></el-input>

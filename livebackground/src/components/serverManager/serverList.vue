@@ -30,7 +30,7 @@
     <el-dialog :title="`${editId?'编辑':'创建'}服务器`" :visible.sync="showCreateServer" destroy-on-close @close="closeDialog" width="550px" center>
       <el-form ref="form" label-width="120px" :model="form" :rules="rules">
         <el-form-item label="服务器名称：" prop="serverName" required>
-          <el-input v-model="form.serverName" style="width:200px;" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')" maxlength="20"></el-input>
+          <el-input v-model.trim="form.serverName" style="width:200px;" maxlength="20"></el-input>
         </el-form-item>
         <el-form-item label="服务器IP：" prop="serverIP" required>
           <el-input v-model="form.serverIP" style="width:200px;" maxlength="20"></el-input>

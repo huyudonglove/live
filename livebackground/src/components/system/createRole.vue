@@ -7,7 +7,7 @@
     <div>
       <el-form label-position="right" label-width="150px" style="width: 70%">
         <el-form-item label="角色名称" :required="true">
-          <el-input type="text" v-model="roleName" style="width:400px;" maxlength="50" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')"></el-input>
+          <el-input type="text" v-model.trim="roleName" style="width:400px;" maxlength="50"></el-input>
         </el-form-item>
         <el-form-item label="备注" :required="true">
           <el-input type="textarea" v-model="description" style="width:400px;" maxlength="200" show-word-limit rows="5"></el-input>

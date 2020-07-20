@@ -11,7 +11,7 @@
         </div>
         <el-form ref="form" label-position="right" label-width="150px" :model="form" :rules="rules" style="width: 70%">
           <el-form-item label="用户名称" prop="userName" :required="true">
-            <el-input type="text" v-model="form.userName" maxlength="50" style="width:200px;" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')"></el-input>
+            <el-input type="text" v-model.trim="form.userName" maxlength="50" style="width:200px;"></el-input>
           </el-form-item>
           <el-form-item label="邮箱账号" prop="email" :required="true">
             <el-input :disabled="isEdit" type="text" v-model="form.email" maxlength="50" style="width:200px;"></el-input>

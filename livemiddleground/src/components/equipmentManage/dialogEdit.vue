@@ -8,7 +8,7 @@
     >
     <el-form ref="formSize" :model="formSize" label-width="110px" :rules="rules">
     <el-form-item label="设备名称：" prop="name">
-      <el-input v-model="formSize.name"  maxlength="20" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')"></el-input>
+      <el-input v-model.trim="formSize.name"  maxlength="20"></el-input>
     </el-form-item>
     <el-form-item label="推流地址：">
       <el-input v-model="address" :disabled="true"></el-input>

@@ -7,7 +7,7 @@
     <div>
       <el-form ref="form" label-width="120px" :model="form" :rules="rules">
         <el-form-item label="用户名称：" prop="userName" required>
-          <el-input type="text" v-model="form.userName" style="width:200px;" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')" maxlength="50"></el-input>
+          <el-input type="text" v-model.trim="form.userName" style="width:200px;" maxlength="50"></el-input>
         </el-form-item>
         <el-form-item label="用户组：" prop="userGroupId" required>
           <el-select v-model="form.userGroupId" style="width:200px;">

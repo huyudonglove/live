@@ -7,15 +7,15 @@
       <el-form ref="form" label-width="120px" :model="form" :rules="rules">
         <el-form-item label="登录密码" prop="oldPassword" required>
           <input  type="text"  class="is-hidden" />
-          <el-input type="password" v-model="form.oldPassword" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')" style="width:200px;" autocomplete="new-password" maxlength="50"></el-input>
+          <el-input type="password" v-model.trim="form.oldPassword" style="width:200px;" autocomplete="new-password" maxlength="50"></el-input>
         </el-form-item>
         <el-form-item label="新密码" prop="password" required>
           <input  type="text"  class="is-hidden" />
-          <el-input type="password" v-model="form.password" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')" style="width:200px;" autocomplete="new-password" maxlength="50"></el-input>
+          <el-input type="password" v-model.trim="form.password" style="width:200px;" autocomplete="new-password" maxlength="50"></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="confirmPassword" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')" required>
+        <el-form-item label="确认密码" prop="confirmPassword" required>
           <input  type="text"  class="is-hidden" />
-          <el-input type="password" v-model="form.confirmPassword" style="width:200px;" autocomplete="new-password" maxlength="50"></el-input>
+          <el-input type="password" v-model.trim="form.confirmPassword" style="width:200px;" autocomplete="new-password" maxlength="50"></el-input>
         </el-form-item>
         <el-form-item label="">
           <span style="color:red">注：密码必须为6-16位字母+数字的组合</span>

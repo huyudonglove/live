@@ -18,7 +18,7 @@
             <el-radio :label="1">无</el-radio>
             <el-radio :label="0">有</el-radio>
           </el-radio-group>
-          <span v-if="form.isNeedPassword==0"><el-input v-model="form.livePassword" placeholder="请输入6个字符长度密码" style="width: 180px;margin-left: 10px" maxlength="6" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')"></el-input></span>
+          <span v-if="form.isNeedPassword==0"><el-input v-model.trim="form.livePassword" placeholder="请输入6个字符长度密码" style="width: 180px;margin-left: 10px" maxlength="6"></el-input></span>
         </el-form-item>
 <!--        <el-form-item label="是否录制回放" prop="isPlayBack">-->
 <!--          <el-radio-group v-model="form.isPlayBack">-->
