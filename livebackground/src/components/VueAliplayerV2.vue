@@ -119,7 +119,7 @@
               this.allData=res.data
               this.startTime=new Date(res.data.startTime).getTime()
               this.endTime=new Date(res.data.endTime).getTime()
-              this.serverTime=new Date(res.data.now).getTime()  
+              this.serverTime=new Date(res.data.now).getTime()
               // this.rtmpUrl = res.data.cameraList[0].deviceDto.address;
               this.positionCode= this.$route.query.positionCode||res.data.cameraList[0].deviceDto.positionCode
               this.replace('positionCode',this.positionCode);
@@ -193,11 +193,11 @@
     watch:{
       rtmpUrl(){
         this.replace('rtmpUrl',this.rtmpUrl);
-        
+
       },
       token(){
         this.replace('token',this.token);
-        
+
       },
       first(){
       this.replace('first',this.first);
@@ -276,8 +276,8 @@
       this.streamId=message.deviceDto.streamId
       this.positionCode=message.deviceDto.positionCode
       this.token=message.deviceDto.token
-      this.idex=index;
-      index?this.replace('idx',index):this.replace('idx',0);
+      let idex=this.allData.cameraList.map(v=>v.id).indexOf(message.id)
+      idex?this.replace('idx',idex):this.replace('idx',0);
       this.replace('positionCode',this.positionCode);
       this.replace('streamId',this.streamId);
       this.codeData=this.$route.query.idx?this.allData.cameraList[this.$route.query.idx].trancodeSettingDtoList:this.allData.cameraList[0].trancodeSettingDtoList
