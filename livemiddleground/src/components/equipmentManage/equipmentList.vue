@@ -12,7 +12,7 @@
       </el-table-column>
         <el-table-column  prop="relativePath" label="直播推流地址" width="" align="center">
           <template slot-scope="scope">
-            rtmp://{{scope.row.address}}:32293{{scope.row.relativePath}}
+            rtmp://{{scope.row.address}}:{{scope.row.pushPort}}{{scope.row.relativePath}}
           </template>
         </el-table-column>
         <el-table-column  prop="serverName" label="服务器" width="150" align="center"></el-table-column>

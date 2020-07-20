@@ -276,8 +276,8 @@
       this.streamId=message.deviceDto.streamId
       this.positionCode=message.deviceDto.positionCode
       this.token=message.deviceDto.token
-      this.idex=index;
-      index?this.replace('idx',index):this.replace('idx',0);
+      let idex=this.allData.cameraList.map(v=>v.id).indexOf(message.id)
+      idex?this.replace('idx',idex):this.replace('idx',0);
       this.replace('positionCode',this.positionCode);
       this.replace('streamId',this.streamId);
       this.codeData=this.$route.query.idx?this.allData.cameraList[this.$route.query.idx].trancodeSettingDtoList:this.allData.cameraList[0].trancodeSettingDtoList
