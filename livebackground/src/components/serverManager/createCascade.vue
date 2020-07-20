@@ -7,7 +7,7 @@
     <div class="myCascade">
       <el-form ref="form" label-width="150px" :model="form" :rules="rules">
         <el-form-item label="级联名称：" prop="name" required>
-          <el-input type="text" v-model="form.name" style="width:200px;" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')" maxlength="20"></el-input>
+          <el-input type="text" v-model.trim="form.name" style="width:200px;" maxlength="20"></el-input>
         </el-form-item>
         <el-form-item label="级联链路" prop="treeData" required>
           <el-tree

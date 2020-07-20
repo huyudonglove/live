@@ -44,7 +44,7 @@
               <el-input disabled v-model="form.parentPositionName" style="width:200px;" maxlength="20"></el-input>
             </el-form-item>
             <el-form-item :label="firstLevel?'一级位置名称':'子级位置名称'" prop="positionName" required>
-              <el-input v-model="form.positionName" style="width:200px;" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')" maxlength="20"></el-input>
+              <el-input v-model.trim="form.positionName" style="width:200px;" maxlength="20"></el-input>
             </el-form-item>
           </el-form>
           <span slot="footer" class="dialog-footer">

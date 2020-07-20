@@ -50,7 +50,7 @@
       >
       <el-form ref="formSize" :model="formSize" label-width="100px" :rules="rules" onsubmit="return false;">
       <el-form-item label="请输入密码" prop="roomPwd">
-        <el-input v-model="formSize.roomPwd" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')"></el-input>
+        <el-input v-model.trim="formSize.roomPwd"></el-input>
       </el-form-item>
       <div style="width:80px;margin:0px auto">
       <el-button type="primary" @click.enter="submitForm('formSize')">确 定</el-button>

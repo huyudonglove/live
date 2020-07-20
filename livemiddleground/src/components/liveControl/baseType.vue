@@ -2,7 +2,7 @@
     <div>
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="150px" class="demo-ruleForm" style="width: 50%">
         <el-form-item label="直播间名称" prop="liveName">
-          <el-input v-model="ruleForm.liveName" oninput="this.value=this.value.replace(/^\s*|\s*$/g,'')"></el-input>
+          <el-input v-model.trim="ruleForm.liveName"></el-input>
         </el-form-item>
         <el-form-item label="直播间副标题" prop="liveViceTopic">
           <el-input v-model="ruleForm.liveViceTopic"></el-input>
