@@ -124,7 +124,7 @@
 import { Base64 } from 'js-base64'
 import pagination from '../../../share/pagination'
 import playBack from '../../liveControl/playBack/playBack'
-import {channelsInfo,roomsList,roomsUpper,roomsLower,oneKeyEndLive2,stopReview,getVideoUrl,queryReplayListByRoomId} from '../../../http/request'
+import {channelsInfo,roomsList,roomsUpper,roomsLower,oneKeyEndLive2,stopReview,getVideoUrl,queryReplayListByRoomId,deleteLive} from '../../../http/request'
 export default {
   name: 'channelsListInfo',
   inject: ['replace', 'reload'],
@@ -266,7 +266,12 @@ export default {
           this.$message.error(res.msg)
         }
       })
-      }
+      },
+      del(id){
+        deleteLive(id).then(res=>{
+          this.reload()
+        })
+          },
   },
   created () {
     this.listData()
